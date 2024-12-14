@@ -17,14 +17,6 @@ const nutsuserschma = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
-    messages: [
-        {
-            content: String,
-            timestamp: { type: Date, default: Date.now }
-        }
-    ]
-
-
 });
 const nutsuser = mongoose.model('nutsUser', nutsuserschma);
 
