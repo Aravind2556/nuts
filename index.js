@@ -128,7 +128,7 @@ index.put('/Upadte', async (req,res)=>{
 })
 
 
-// Post a message
+// Post a message 
 index.post('/postMessage', async (req, res) => {
     try {
         const { content, email } = req.body;
@@ -149,7 +149,7 @@ index.post('/postMessage', async (req, res) => {
 index.get('/getMessages', async (req, res) => {
     try {
         const messages = await Post.find({}).sort({ timestamp: -1 });
-        return res.send({ success: true, messages : "message rescive successfully" });
+        return res.send({ success: true, messages });
     } catch (err) {
         console.log("Error retrieving messages:", err);
         return res.send({ success: false, message: "An error occurred while retrieving messages. Please contact the developer." });
